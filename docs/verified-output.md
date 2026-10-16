@@ -87,8 +87,18 @@ eth_call, get_block, get_chain_info, get_code, get_storage_at
 
 - **7 distinct values** were read from the single USDC contract, all `ok` — the task
   requires at least 3.
-- All 7 reads are pinned to **block 20,362,374** and that block's hash and timestamp
+- All 7 reads are pinned to **block 20,362,374**, and that block's hash and timestamp
   are printed, so the snapshot is internally consistent and auditable.
+- **This run is reproducible.** Re-running the exact same block reproduces the block
+  hash byte-for-byte, which is how this transcript can be independently checked:
+
+  ```text
+  $ node dist/src/index.js --block 20362374 --no-registry
+  Read at block  20,362,374  (0x136b486)
+  Block hash     0x0419460260a4b2cdb57b62ab4dfafdc650418245762b23fe60715a2256f166ee
+  Block time     2026-10-16T04:22:47.000Z
+  Block source   pinned via --block
+  ```
 - The USDC contract on Pharos **does** implement `owner()`, and it resolved to
   `0x9F8Ea09770Dc38fc61f5a62031b3BE0526D54D92`. It is reported as "unlabelled
   address" because there is no published source naming that address — the tool does

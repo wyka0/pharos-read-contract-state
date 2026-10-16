@@ -30,7 +30,7 @@ whole Pharos token registry is swept at the same block for comparison.
 
 ## The contract
 
-**USDC on Pharos Pacific Mainnet** — `0xc879C018dB60520f4355C26ED1A6D572cdac1815`.
+**USDC on Pharos Pacific Mainnet** — `0xC879C018dB60520F4355C26eD1a6D572cdAC1815`.
 
 The address is **not guessed**. It is published in the Pharos Pacific Mainnet token registry:
 
@@ -123,7 +123,7 @@ With options:
 
 ```powershell
 # Inspect a different contract from the registry
-npm start -- --address 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0
+npm start -- --address 0x52C48d4213107b20bC583832b0d951FB9CA8F0B0
 
 # Pin reads to a specific block for a reproducible snapshot
 npm start -- --block 20360972
@@ -239,6 +239,7 @@ eth_call, get_block, get_chain_info, get_code, get_storage_at
 
 - **7 values read from one contract** over Chain MCP (`eth_call`), all `ok` — the task asks for at least 3.
 - Every read is **pinned to block 20,362,374**, whose hash and timestamp are printed, so the snapshot is consistent and auditable.
+- **Reproducible**: `npm start -- --block 20362374` reproduces that block hash byte-for-byte, so the evidence can be independently checked.
 - **Decimals are applied**: raw `24383622998165` base units renders as `24,383,622.998165 USDC`, and the un-scaled integer is kept alongside it.
 - **Addresses are labelled** (`USDC (USDC) contract`) or explicitly reported as `unlabelled address` when no published source names them — labels are never invented.
 - USDC's slots 0–2 hold 20-byte addresses, not strings. The decoder recognised the layout and presented them as addresses instead of guessing a string.
