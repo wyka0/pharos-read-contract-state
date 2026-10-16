@@ -1,0 +1,32 @@
+{
+  "name": "pharos-read-contract-state",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Read live smart-contract state on Pharos Pacific Mainnet through the Pharos Chain MCP server.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "pharos-read-contract-state": "dist/src/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test",
+    "test": "npm run build && node --test \"dist/test/*.test.js\"",
+    "test:live": "npm run build && node dist/test/live-check.js",
+    "verify": "npm run lint && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "viem": "^2.57.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.5",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.2"
+  }
+}
