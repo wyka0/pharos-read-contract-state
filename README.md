@@ -324,8 +324,7 @@ codes are recorded in [`docs/verified-output.md`](docs/verified-output.md).
 │   ├── reader.test.ts  config.test.ts  report.test.ts
 │   └── live-check.ts         real network verification (npm run test:live)
 ├── docs/
-│   ├── verified-output.md       real transcripts, live evidence, failure paths
-│   └── video-walkthrough-script.md
+│   └── verified-output.md       real transcripts, live evidence, failure paths
 ├── .env.example   .gitignore   eslint.config.mjs
 ├── package.json   tsconfig.json
 └── README.md

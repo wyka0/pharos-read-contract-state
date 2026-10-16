@@ -24,3 +24,7 @@ Thumbs.db
 coverage/
 .nyc_output/
 .eslintcache
+
+# Local-only: video walkthrough script for the optional bonus.
+# Kept on disk for recording, deliberately excluded from the public repo.
+docs/video-walkthrough-script.md
