@@ -18,7 +18,8 @@
     "lint": "eslint src test",
     "test": "npm run build && node --test \"dist/test/*.test.js\"",
     "test:live": "npm run build && node dist/test/live-check.js",
-    "verify": "npm run lint && npm run typecheck && npm test"
+    "check:rpc": "node scripts/check-rpc-methods.mjs",
+    "verify": "npm run check:rpc && npm run lint && npm run typecheck && npm test"
   },
   "dependencies": {
     "viem": "^2.57.7"
